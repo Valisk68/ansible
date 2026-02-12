@@ -1,0 +1,24 @@
+- name: vali shaik
+  dob: 2000-01-01
+  mobile: 1234567890
+  address:
+  - street: 123 Main St
+    city: Anytown
+    state: CA
+    zip: 12345
+  - street: 456 Elm St
+    city: Othertown
+    state: NY
+    zip: 67890
+- name: john doe
+  dob: 1995-05-15
+  mobile: 9876543210
+  address:
+  - street: 789 Oak St
+    city: Sometown
+    state: TX
+    zip: 54321
+  - street: 321 Pine St
+    city: Anycity
+    state: FL
+    zip: 98765
