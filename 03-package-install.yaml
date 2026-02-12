@@ -24,8 +24,9 @@
       permanent: yes
       state: enabled
   - name: reload firewalld
-    ansible.builtin.firewalld:
-      state: reloaded
+    ansible.builtin.service:
+     name: firewalld
+     state: reloaded
   - name: verify nginx is running
     ansible.builtin.shell: "curl -I http://localhost | grep '200 OK'"
     register: nginx_status
@@ -34,4 +35,3 @@
     ansible.builtin.debug:
       msg: "Nginx is running and accessible on port 80."
 
-      
