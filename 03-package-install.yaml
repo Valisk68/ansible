@@ -14,65 +14,64 @@
   - name: create index.html
     ansible.builtin.copy:
       dest: /usr/share/nginx/html/index.html
-      content: "<!DOCTYPE html>
-<html>
-<head>
-  <title>Student Registration</title>
-  <style>
-    body {
-      background-color: green;
-      font-family: Arial, sans-serif;
-      color: white;
-      text-align: center;
-      padding-top: 50px;
-    }
-    .form-box {
-      background-color: white;
-      color: black;
-      padding: 20px;
-      border-radius: 8px;
-      display: inline-block;
-    }
-    input {
-      display: block;
-      margin: 10px auto;
-      padding: 8px;
-      width: 80%;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-    }
-    button {
-      background-color: grey;
-      color: white;
-      padding: 10px 20px;
-      margin: 10px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-  <div class="form-box">
-    <h2>Student Registration</h2>
-    <form id="regForm">
-      <input type="text" id="username" placeholder="Username" required>
-      <input type="password" id="password" placeholder="Password" required>
-      <input type="password" id="repeatPassword" placeholder="Repeat Password" required>
-      <button type="reset">Reset</button>
-      <button type="button" onclick="saveData()">Save</button>
-    </form>
-  </div>
+      content: "<html>
+                  <head>
+                    <title>Student Registration</title>
+                    <style>
+                      body {
+                        background-color: green;
+                        font-family: Arial, sans-serif;
+                        color: white;
+                        text-align: center;
+                        padding-top: 50px;
+                      }
+                      .form-box {
+                        background-color: white;
+                        color: black;
+                        padding: 20px;
+                        border-radius: 8px;
+                        display: inline-block;
+                      }
+                      input {
+                        display: block;
+                        margin: 10px auto;
+                        padding: 8px;
+                        width: 80%;
+                        border-radius: 4px;
+                        border: 1px solid #ccc;
+                      }
+                      button {
+                        background-color: grey;
+                        color: white;
+                        padding: 10px 20px;
+                        margin: 10px;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                      }
+                    </style>
+                  </head>
+                  <body>
+                    <div class="form-box">
+                      <h2>Student Registration</h2>
+                      <form id="regForm">
+                        <input type="text" id="username" placeholder="Username" required>
+                        <input type="password" id="password" placeholder="Password" required>
+                        <input type="password" id="repeatPassword" placeholder="Repeat Password" required>
+                        <button type="reset">Reset</button>
+                        <button type="button" onclick="saveData()">Save</button>
+                      </form>
+                    </div>
 
-  <script>
-    function saveData() {
-      const username = document.getElementById('username').value;
-      localStorage.setItem('studentName', username);
-      window.location.href = "course.html";
-    }
-  </script>
-</body>
-</html>"
+                    <script>
+                      function saveData() {
+                        const username = document.getElementById('username').value;
+                        localStorage.setItem('studentName', username);
+                        window.location.href = "course.html";
+                      }
+                    </script>
+                  </body>
+                  </html>"
       owner: nginx
       group: nginx
       mode: '0644'
