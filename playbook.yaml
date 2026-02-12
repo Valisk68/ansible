@@ -3,6 +3,9 @@
   tasks:
     - name: ping the servers
       ansible.builtin.ping:
+    - name:  Hello world
+      ansible.builtin.debug:
+        msg: "Hello world"
       
 
         
