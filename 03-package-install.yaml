@@ -14,7 +14,7 @@
   - name: create index.html
     ansible.builtin.copy:
       dest: /usr/share/nginx/html/index.html
-      content: "<html><body><h1>Welcome to Nginx!</h1></body></html>"
+      content: "<html><body><h1>Welcome Mastanvali, Nginx is installed!</h1></body></html>"
       owner: nginx
       group: nginx
       mode: '0644'
