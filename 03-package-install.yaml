@@ -6,3 +6,32 @@
     ansible.builtin.package:
       name: nginx
       state: present
+  - name: start nginx service
+    ansible.builtin.service:
+      name: nginx
+      state: started
+      enabled: yes
+  - name: create index.html
+    ansible.builtin.copy:
+      dest: /usr/share/nginx/html/index.html
+      content: "<html><body><h1>Welcome to Nginx!</h1></body></html>"
+      owner: nginx
+      group: nginx
+      mode: '0644'
+  - name: open port 80 in firewall
+    ansible.builtin.firewalld:
+      port: 80/tcp
+      permanent: yes
+      state: enabled
+  - name: reload firewalld
+    ansible.builtin.firewalld:
+      state: reloaded
+  - name: verify nginx is running
+    ansible.builtin.shell: "curl -I http://localhost | grep '200 OK'"
+    register: nginx_status
+    failed_when: nginx_status.rc != 0
+  - name: print nginx status
+    ansible.builtin.debug:
+      msg: "Nginx is running and accessible on port 80."
+
+      
