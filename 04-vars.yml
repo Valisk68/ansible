@@ -1,9 +1,10 @@
 - name: play level variables
+  hosts: local
+  connection: local
   vars:
     course: "DEVOPS"
     Duration: "140 hours"
     Fees : "15000 INR"
-- hosts: localhost
 - tasks:
    - name: Print course details
      ansible.builtin.debug:
