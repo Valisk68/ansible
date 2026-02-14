@@ -1,0 +1,7 @@
+- name: pirnt value from inventory file
+  hosts: local
+  connection: local
+  tasks:
+    - name: variable from inventory file
+      ansible.builtin.debug:
+        msg: "course is:{{COURSE}}"
