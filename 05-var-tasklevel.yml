@@ -2,13 +2,13 @@
   hosts: local
   connection: local
   vars:
-    course: "DEVOPS"
-    Duration: "140 hours"
-    Fees: "15000 INR"
+ 
 
   tasks:
     - name: Print variable details
       vars: 
+      var_files:
+        - course.yaml
         course: "PYTHON"
       ansible.builtin.debug:
         msg: "Course: {{ course }}, Duration: {{ Duration }}, Fees: {{ Fees }}"
