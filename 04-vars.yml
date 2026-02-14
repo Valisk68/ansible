@@ -10,18 +10,3 @@
      ansible.builtin.debug:
        msg: "Course: is {{ course }}, Duration: is {{ Duration }}, Fees: {{ Fees }}"
       
-
-
-
-# - name: play level variables
-#   hosts: local
-#   connection: local
-#   vars:
-#     course: "DEVOPS"
-#     Duration: "140 hours"
-#     Fees: "15000 INR"
-
-#   tasks:
-#     - name: Print course details
-#       ansible.builtin.debug:
-#         msg: "Course: {{ course }}, Duration: {{ Duration }}, Fees: {{ Fees }}"
